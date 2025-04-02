@@ -1,0 +1,186 @@
+@keyframes dropdown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -1em, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@media (orientation: portrait) and (max-width: 990px) {
+  .app {
+    padding-top: 1.5em;
+  }
+}
+@media (orientation: landscape), (orientation: portrait) and (min-width: 991px) {
+  .app {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    min-height: 100%;
+  }
+}
+.app .description {
+  z-index: 1;
+  position: relative;
+}
+@media (orientation: portrait) and (max-width: 990px) {
+  .app .description {
+    text-align: center;
+  }
+}
+@media (orientation: landscape), (orientation: portrait) and (min-width: 991px) {
+  .app .description {
+    padding-right: 3em;
+    animation-name: slide-right;
+    animation-duration: 0.15s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+  }
+}
+.app .description p {
+  margin-bottom: 0;
+}
+.app .image {
+  position: relative;
+  max-height: calc(100vh - 3em);
+}
+@media (orientation: portrait) and (max-width: 990px) {
+  .app .image {
+    margin: 2.5rem 0;
+  }
+  .app .image img {
+    margin: 0 auto;
+  }
+}
+@media (orientation: landscape), (orientation: portrait) and (min-width: 991px) {
+  .app .image {
+    animation-name: slide-left;
+    animation-duration: 0.15s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+  }
+}
+.app .image .image-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 314/651;
+}
+.app .image .image-container img {
+  max-height: calc(100vh - 3em);
+}
+.app .image img.img-layer {
+  position: absolute;
+  display: none;
+  width: 100%;
+  z-index: -1;
+}
+.app .image img.img-left {
+  top: 10%;
+  right: -90%;
+}
+.app .image img.img-right {
+  top: 5%;
+  right: -45%;
+}
+.app div.logo {
+  padding: 1.5em 0;
+  height: 5em;
+  display: inline-block;
+}
+.app .app-overlay {
+  position: absolute;
+  width: 100%;
+  max-width: 448px;
+  aspect-ratio: 314/651;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+.app .app-overlay:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0.95;
+}
+.app .app-overlay:not(.hide) > div {
+  animation-name: fade-in;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+.app .app-overlay > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+@media (orientation: portrait) and (max-width: 990px) {
+  .app .app-overlay > div {
+    justify-content: flex-start;
+  }
+}
+.app .app-overlay > div img {
+  margin-top: 1em;
+}
+@media (orientation: portrait) and (max-width: 990px) {
+  .app .app-overlay > div > div {
+    margin-top: 5vh;
+  }
+}
+
+#badges {
+  margin-top: 1.5em;
+  display: flex;
+}
+@media (orientation: portrait) and (max-width: 990px) {
+  #badges {
+    justify-content: center;
+    text-align: center;
+    display: inline-flex;
+  }
+}
+#badges .badge img {
+  height: 3em;
+}
+#badges .badge .qr-link {
+  color: var(--primary-color);
+  cursor: pointer;
+  margin-top: 0.5em;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+#badges .badge .qr-link:hover {
+  color: var(--text-color);
+}
+
+.badge:not(.hide) + .badge {
+  margin-left: 1.5em;
+}
+
+.hide {
+  display: none !important;
+}
+
+main {
+  position: relative;
+  height: 100vh;
+  overflow-x: hidden;
+}/*# sourceMappingURL=app.css.map */
